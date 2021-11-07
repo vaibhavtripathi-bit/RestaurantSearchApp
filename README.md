@@ -20,3 +20,8 @@ if required.
 
 Assumption 
 1. Search with empty string means API should return all the data.
+
+How to change the Data to test the app with larger data set
+
+1. Modify the JSON files in the project within assets folder. (menu_list.txt, restaurant_list.txt)
+2. Override the "getRestaurantsFromQuery" method in the "RestaurantDataRepositoryMockImpl" class and return the expected response.
