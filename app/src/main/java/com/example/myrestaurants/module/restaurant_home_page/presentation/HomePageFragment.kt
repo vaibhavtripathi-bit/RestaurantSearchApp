@@ -46,8 +46,8 @@ class HomePageFragment : BaseFragment(R.layout.restaurant_home_page_fragment) {
         override fun clickListener(itemView: View, item: HomePageData, position: Int) {
             when (item) {
                 is RestaurantItem -> {
-                    view?.let { view ->
-                        val snackBar = Snackbar.make(view, "Thanks for choosing ${item.name}", Snackbar.LENGTH_SHORT)
+                    view?.let {
+                        val snackBar = Snackbar.make(it, getString(R.string.thanks_for_choosing) + item.name, Snackbar.LENGTH_SHORT)
                         context?.let {
                             snackBar.view.rootView.setBackgroundColor(ContextCompat.getColor(it, R.color.black))
                             snackBar.show()

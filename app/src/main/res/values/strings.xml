@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyRestaurants</string>
+    <string name="thanks_for_choosing">Thanks for choosing</string>
 </resources>
