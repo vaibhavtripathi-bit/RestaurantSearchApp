@@ -5,11 +5,18 @@ import com.example.myrestaurants.data.network.response.home_page.MenuResponse
 import com.example.myrestaurants.data.network.response.home_page.Restaurant
 import com.example.myrestaurants.data.network.response.home_page.RestaurantResponse
 import com.example.myrestaurants.module.restaurant_home_page.domain.repository.RestaurantDataRepository
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 
-class RestaurantDataRepositoryMockImpl : RestaurantDataRepository {
-    override suspend fun getRestaurantsFromQuery(query: String): RestaurantResponse {
-        return if (query.isEmpty()) {
+class RestaurantDataRepositoryMockImpl(
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
+) : RestaurantDataRepository {
+    override suspend fun getRestaurantsFromQuery(
+        query: String,
+    ): RestaurantResponse = withContext(dispatcher) {
+        if (query.isEmpty()) {
             fetchRestaurantFromNetwork()
         } else {
             delay(300)
