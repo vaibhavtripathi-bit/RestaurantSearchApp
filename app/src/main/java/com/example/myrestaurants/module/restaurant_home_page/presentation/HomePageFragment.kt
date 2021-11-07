@@ -18,6 +18,7 @@ import com.example.myrestaurants.module.restaurant_home_page.presentation.adapte
 import com.example.myrestaurants.module.restaurant_home_page.presentation.adapter.model.HomePageData
 import com.example.myrestaurants.module.restaurant_home_page.presentation.adapter.model.HomePageData.RestaurantItem
 import com.example.myrestaurants.utils.getQueryTextChangeStateFlow
+import com.example.myrestaurants.utils.runWhenLastItemBecomeVisible
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -76,6 +77,14 @@ class HomePageFragment : BaseFragment(R.layout.restaurant_home_page_fragment) {
             )
             layoutManager = LinearLayoutManager(context)
             adapter = homePageAdapter
+        }
+
+        binding.recyclerView.runWhenLastItemBecomeVisible {
+            /*
+            TODO: This feature is pending, to load more item API call.
+            1. check if more item is there to load, if true, then
+            2. make an API call for the next page.
+            */
         }
     }
 
