@@ -1,7 +1,7 @@
 package com.example.myrestaurants.module.restaurant_home_page.presentation
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.myrestaurants.base.BaseViewModel
 import com.example.myrestaurants.module.restaurant_home_page.domain.usecases.HomePageUseCases
 import com.example.myrestaurants.module.restaurant_home_page.presentation.adapter.model.HomePageData.RestaurantItem
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -12,8 +12,8 @@ import kotlinx.coroutines.launch
 import java.time.LocalDate
 
 class HomePageViewModel(
-    private val homePageUseCases: HomePageUseCases
-) : ViewModel() {
+    private val homePageUseCases: HomePageUseCases,
+) : BaseViewModel() {
     private val _viewState: MutableStateFlow<ViewState> = MutableStateFlow(ViewState.LoadingState)
     val viewState: StateFlow<ViewState> = _viewState
 
