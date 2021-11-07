@@ -17,3 +17,6 @@ and handled visibility of the views, and triggering actions
 if required.
 4. API call are mocked with local data.
 5. Detail Page or some better UX design.
+
+Assumption 
+1. Search with empty string means API should return all the data.
