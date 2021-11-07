@@ -9,8 +9,8 @@ import com.example.myrestaurants.module.restaurant_home_page.presentation.adapte
 import com.example.myrestaurants.module.restaurant_home_page.presentation.adapter.model.HomePageData.RestaurantItem
 
 class HomePageAdapter(
-    itemList: List<HomePageData>,
-    private val onClickListener: ItemClickListener? = null,
+    itemList: List<HomePageData> = mutableListOf(),
+    private val onClickListener: ItemClickListener? = null
 ) : RecyclerView.Adapter<RestaurantHomeViewHolder>() {
 
     private var itemList = mutableListOf<HomePageData>()

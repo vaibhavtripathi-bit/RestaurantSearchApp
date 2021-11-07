@@ -71,10 +71,7 @@ class HomePageFragment : BaseFragment(R.layout.restaurant_home_page_fragment) {
     private fun setUpRecyclerView() {
         binding.recyclerView.apply {
             setHasFixedSize(true)
-            homePageAdapter = HomePageAdapter(
-                itemList = mutableListOf(),
-                onClickListener = clickListener
-            )
+            homePageAdapter = HomePageAdapter(onClickListener = clickListener)
             layoutManager = LinearLayoutManager(context)
             adapter = homePageAdapter
         }
