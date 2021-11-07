@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import java.time.LocalDate
 
 data class RestaurantResponse(
-    val restaurants: List<Restaurant>,
+    val restaurants: List<Restaurant>
 )
 
 data class Restaurant(
@@ -17,7 +17,7 @@ data class Restaurant(
     @SerializedName("operating_hours")
     val operatingHours: OperatingHours,
     val photograph: String,
-    val reviews: List<Review>,
+    val reviews: List<Review>
 ) {
     fun getTimingDetail(date: LocalDate): String {
         return operatingHours.getTiming(date.dayOfWeek.name)
@@ -35,7 +35,7 @@ data class Restaurant(
 
     data class Latlng(
         val lat: Double,
-        val lng: Double,
+        val lng: Double
     )
 
     data class OperatingHours(
@@ -52,31 +52,17 @@ data class Restaurant(
         @SerializedName("saturday")
         val saturday: String,
         @SerializedName("sunday")
-        val sunday: String,
+        val sunday: String
     ) {
         fun getTiming(dayName: String): String {
             return "Timing : " + when (dayName) {
-                monday -> {
-                    monday
-                }
-                tuesday -> {
-                    tuesday
-                }
-                wednesday -> {
-                    wednesday
-                }
-                thursday -> {
-                    thursday
-                }
-                friday -> {
-                    friday
-                }
-                saturday -> {
-                    saturday
-                }
-                sunday -> {
-                    sunday
-                }
+                monday -> { monday }
+                tuesday -> { tuesday }
+                wednesday -> { wednesday }
+                thursday -> { thursday }
+                friday -> { friday }
+                saturday -> { saturday }
+                sunday -> { sunday }
                 else -> {
                     Throwable("Incorrect date information")
                 }
@@ -88,6 +74,6 @@ data class Restaurant(
         val comments: String,
         val date: String,
         val name: String,
-        val rating: Int,
+        val rating: Int
     )
 }

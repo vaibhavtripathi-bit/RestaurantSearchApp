@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import java.time.LocalDate
 
 class HomePageViewModel(
-    private val homePageUseCases: HomePageUseCases,
+    private val homePageUseCases: HomePageUseCases
 ) : ViewModel() {
     private val _viewState: MutableStateFlow<ViewState> = MutableStateFlow(ViewState.LoadingState)
     val viewState: StateFlow<ViewState> = _viewState

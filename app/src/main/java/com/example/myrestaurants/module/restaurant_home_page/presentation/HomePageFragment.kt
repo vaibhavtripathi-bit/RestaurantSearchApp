@@ -60,7 +60,7 @@ class HomePageFragment : BaseFragment(R.layout.restaurant_home_page_fragment) {
 
     override fun onViewCreated(
         view: View,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
         _binding = RestaurantHomePageFragmentBinding.bind(view)

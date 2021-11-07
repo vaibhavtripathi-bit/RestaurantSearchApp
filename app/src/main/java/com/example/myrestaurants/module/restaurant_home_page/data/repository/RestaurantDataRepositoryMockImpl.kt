@@ -25,7 +25,7 @@ class RestaurantDataRepositoryMockImpl : RestaurantDataRepository {
     private fun getRestaurantWithQueryAndIds(
         query: String,
         restaurantResponse: RestaurantResponse,
-        restaurantIdList: Set<Int>,
+        restaurantIdList: Set<Int>
     ): List<Restaurant> {
         return restaurantResponse
             .restaurants
@@ -38,7 +38,7 @@ class RestaurantDataRepositoryMockImpl : RestaurantDataRepository {
 
     private fun getRestaurantForQueries(
         menuResponse: MenuResponse,
-        query: String,
+        query: String
     ): Set<Int> {
         val restaurantIdList = menuResponse.menus.flatMapTo(mutableSetOf()) { menu ->
             menu.categories
