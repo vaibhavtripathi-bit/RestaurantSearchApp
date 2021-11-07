@@ -19,7 +19,7 @@ class RestaurantDataRepositoryMockImpl(
         if (query.isEmpty()) {
             fetchRestaurantFromNetwork()
         } else {
-            delay(300)
+            delay(300)// mocking API delay for search
             val restaurantList = getRestaurantWithQueryAndIds(
                 query = query,
                 restaurantResponse = fetchRestaurantFromNetwork(),
