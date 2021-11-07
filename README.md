@@ -9,7 +9,7 @@ new implementation.
 
 This Demo required many improvements :
 
-1. Pagination is not handled.
+1. Pagination is not handled, handling data using diffutil for recycle view
 2. Handling error case and no data cases to show proper message in
 UI and may be retry button.
 3. Two way data binding can be used for populating UI
